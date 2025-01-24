@@ -7,6 +7,7 @@ import StudentsView from "./Component/student/StudentsView";
 import NavBar from "./Component/Common/NavBar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AddStudent from "./Component/student/AddStudent";
+import UpdateStudent from "./Component/student/UpdateStudent";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -18,6 +19,11 @@ function App() {
           <Route exact path="/" element={<Home />}></Route>
           <Route exact path="/view-students" element={<StudentsView />}></Route>
           <Route exact path="/add-students" element={<AddStudent />}></Route>
+          <Route
+            exact
+            path="/update-student/:id"
+            element={<UpdateStudent />}
+          ></Route>
         </Routes>
       </Router>
     </main>
