@@ -6,6 +6,7 @@ import Home from "./Home";
 import StudentsView from "./Component/student/StudentsView";
 import NavBar from "./Component/Common/NavBar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AddStudent from "./Component/student/AddStudent";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
           <Route exact path="/view-students" element={<StudentsView />}></Route>
+          <Route exact path="/add-students" element={<AddStudent />}></Route>
         </Routes>
       </Router>
     </main>
