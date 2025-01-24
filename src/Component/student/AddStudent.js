@@ -1,6 +1,9 @@
+import axios from "axios";
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const AddStudent = () => {
+  let navigate = useNavigate();
   //student array
   const [student, setStudent] = useState({
     firstName: "",
@@ -16,9 +19,16 @@ const AddStudent = () => {
     //assigns the value to the target name, and then updating student array value with those changes
     setStudent({ ...student, [e.target.name]: e.target.value });
   };
+
+  const saveStudent = async (e) => {
+    e.preventDefault();
+    await axios.post("http://localhost:9192/students", student);
+    //navigate to the StudentsView component after the user click on save
+    navigate("/view-students");
+  };
   return (
     <div className="col-sm-8 py-2 px-5">
-      <form>
+      <form onSubmit={(e) => saveStudent(e)}>
         <div className="input-group mb-5">
           <label className="input-group-text" htmlFor="firstName">
             First Name
@@ -84,9 +94,13 @@ const AddStudent = () => {
           </div>
 
           <div className="col-sm-2">
-            <button type="submit" className="btn btn-outline-warning btn-leg">
+            <Link
+              to={"/view-students"}
+              type="submit"
+              className="btn btn-outline-warning btn-leg"
+            >
               Cancel
-            </button>
+            </Link>
           </div>
         </div>
       </form>
