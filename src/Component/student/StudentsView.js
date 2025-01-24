@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FaEdit, FaEye, FaTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const StudentsView = () => {
   //students array to hold all students from the back end and it includes the setStudents method.
@@ -24,7 +25,7 @@ const StudentsView = () => {
   };
   return (
     <section>
-      <table className="table table-bordered table-hover">
+      <table className="table table-bordered table-hover shadow">
         <thead>
           <tr className="text-center">
             <th>ID</th>
