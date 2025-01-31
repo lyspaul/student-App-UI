@@ -10,8 +10,6 @@ import AddStudent from "./Component/student/AddStudent";
 import UpdateStudent from "./Component/student/UpdateStudent";
 import StudentProfile from "./Component/student/StudentProfile";
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <main className="container mt-5">
       <Router>

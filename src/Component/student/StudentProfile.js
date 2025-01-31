@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const StudentProfile = () => {
   const { id } = useParams();
@@ -27,12 +27,8 @@ const StudentProfile = () => {
       `http://localhost:9192/students/student/${id}`
     );
     setStudent(result.data);
-    console.log("This is my data " + firstName);
   };
   return (
-    // <div className="container">
-    //   {student.map((students, index) => students.firstName)};
-    // </div>
     <div>
       <section className="shadow" style={{ backgroundColor: "lightgray" }}>
         <div className="container py-5">
