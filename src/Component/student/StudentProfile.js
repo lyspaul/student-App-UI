@@ -24,7 +24,7 @@ const StudentProfile = () => {
   //method that calls on the Rest Api to the backend to retrieve the student by id
   const loadStudents = async () => {
     const result = await axios.get(
-      `http://localhost:9192/students/student/${id}`
+      `https://studentapp-production-8140.up.railway.app/students/student/${id}`
     );
     setStudent(result.data);
   };

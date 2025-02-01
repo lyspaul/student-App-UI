@@ -22,7 +22,10 @@ const AddStudent = () => {
 
   const saveStudent = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:9192/students", student);
+    await axios.post(
+      "https://studentapp-production-8140.up.railway.app/students",
+      student
+    );
     //navigate to the StudentsView component after the user click on save
     navigate("/view-students");
   };

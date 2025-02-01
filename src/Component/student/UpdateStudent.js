@@ -23,7 +23,7 @@ const UpdateStudent = () => {
   //method that calls on the Rest Api to the backend to retrieve the student by id
   const loadStudents = async () => {
     const result = await axios.get(
-      `http://localhost:9192/students/student/${id}`
+      `https://studentapp-production-8140.up.railway.app/students/student/${id}`
     );
     setStudent(result.data);
   };
@@ -36,7 +36,10 @@ const UpdateStudent = () => {
 
   const updateStudent = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:9192/students/update/${id}`, student);
+    await axios.put(
+      `https://studentapp-production-8140.up.railway.app/students/update/${id}`,
+      student
+    );
     //navigate to the StudentsView component after the user click on save
     navigate("/view-students");
   };

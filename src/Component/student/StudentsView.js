@@ -18,18 +18,23 @@ const StudentsView = () => {
 
   //method that calls on the Rest Api to the backend to retrieve the students data
   const loadStudents = async () => {
-    const result = await axios.get("http://localhost:9192/students", {
-      validateStatus: () => {
-        return true;
-      },
-    });
+    const result = await axios.get(
+      "https://studentapp-production-8140.up.railway.app/students",
+      {
+        validateStatus: () => {
+          return true;
+        },
+      }
+    );
     if (result.status === 302) {
       setStudents(result.data);
     }
   };
   //variable that deletes a student profile based on student id
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:9192/students/delete/${id}`);
+    await axios.delete(
+      `http://studentapp-production-8140.up.railway.app/students/delete/${id}`
+    );
     loadStudents();
   };
   return (
